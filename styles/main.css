@@ -9,6 +9,16 @@ body {
   min-height: 100%;
 }
 
+.navbar {
+  padding: 0.5rem;
+  background-color: rgb(101,18,95);
+}
+
+.navbar .logo {
+  position: relative;
+  left: 2rem;
+}
+
 *, *::before, *::after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
