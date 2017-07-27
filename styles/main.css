@@ -1,8 +1,8 @@
 *, *::before, *::after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
+     -moz-box-sizing: border-box;
+     -webkit-box-sizing: border-box;
+     box-sizing: border-box;
+ }
 
 html {
    height: 100%; /* makes sure out HTML takes up 100% of the browser window */
@@ -15,132 +15,37 @@ body {
   min-height: 100%;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 .navbar {
   padding: 0.5rem;
-<<<<<<< HEAD
   background-color: rgb(101,18,95);
-=======
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> checkpoint-5-collection
-.navbar {
-  padding: 0.5rem;
-  background-color: rgba(101,18,95,0.5);
-  z-index: 1;
->>>>>>> checkpoint-5-collection
-=======
-  background-color: rgba(101,18,95,0.5);
-  z-index: 1;
->>>>>>> checkpoint-4-responsiveness
 }
 
 .navbar .logo {
   position: relative;
   left: 2rem;
-<<<<<<< HEAD
-<<<<<<< HEAD
 }
 
-=======
-=======
->>>>>>> checkpoint-4-responsiveness
-  cursor: pointer; /*produces the finger pointer icon when you hover over logo */
-}
-
-.navbar .links-container {
-  display: table;
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100px;
-  color: white;
-}
-
-.links-container .navbar-link {
-  display: table-cell;
-  position: relative;
-  height: 100%;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  vertical-align: middle;
-  color: white;
-  font-size: 0.625rem;
-  letter-spacing: 0.05rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.links-container .navbar-link:hover {
-  color: rgb(233,50,117);
-<<<<<<< HEAD
-=======
-}
-
-<<<<<<< HEAD
-.navbar-link:active {
-  color: rgb(233,50,117);
-  background-color: white;
->>>>>>> checkpoint-4-responsiveness
-}
-
-<<<<<<< HEAD
->>>>>>> Stashed changes
->>>>>>> checkpoint-5-collection
-*, *::before, *::after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-=======
-.links-container .navbar-link:active {
-  color: rgb(233,50,117);
-  background-color: white;
->>>>>>> checkpoint-5-collection
-}
-
-=======
->>>>>>> checkpoint-4-responsiveness
 .container {
-  margin: 0 auto;
-  max-width: 64rem;
-}
+     margin: 0 auto;
+     max-width: 64rem;
+ }
 
-.container.narrow {
-    max-width: 56rem;
-}
+ @media (min-width: 640px) {
+     html { font-size: 112%; }
 
-@@media (min-width: 640px) {
-  html {font-size: 112%;}
+     .column {
+         float: left;
+         padding-left: 1rem;
+         padding-right: 1rem;
+     }
+     .column.full { width: 100%; }
+     .column.two-thirds { width: 66.7%; }
+     .column.half { width: 50%; }
+     .column.third { width: 33.3%; }
+     .column.fourth { width: 25%; }
+     .column.flow-opposite { float: right; }
+ }
 
-
-  .column {
-    float: left;
-    padding-left: 1rem;
-    padding-right: 1rem;
+ @media (min-width: 1024px) {
+      html { font-size: 120%; }
   }
-
-  .colum.full { width: 100%;}
-  .column.two-thirds { width: 66.7%;}
-  .column.half { width: 50%;}
-  .column.third { width: 33.3%;}
-  .column.fourth { width: 25%;}
-  .column.flow-opposite { float: right;}
-}
-
-@media (min-width: 1024px) {
-  html {font-size: 120%;}
-}
-
-.clearfix::before,
-.clearfix::after {
-  content: " ";
-  display: table;
-}
-
-.clearfix::after {
-  clear: both;
-}
