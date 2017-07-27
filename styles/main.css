@@ -1,3 +1,9 @@
+*, *::before, *::after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 html {
    height: 100%; /* makes sure out HTML takes up 100% of the browser window */
    font-size: 100%;
@@ -78,6 +84,7 @@ body {
 >>>>>>> checkpoint-4-responsiveness
 }
 
+<<<<<<< HEAD
 >>>>>>> Stashed changes
 >>>>>>> checkpoint-5-collection
 *, *::before, *::after {
@@ -86,6 +93,8 @@ body {
   box-sizing: border-box;
 }
 
+=======
+>>>>>>> checkpoint-4-responsiveness
 .container {
   margin: 0 auto;
   max-width: 64rem;
