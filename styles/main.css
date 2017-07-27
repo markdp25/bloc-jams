@@ -16,6 +16,7 @@ body {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .navbar {
   padding: 0.5rem;
 <<<<<<< HEAD
@@ -23,6 +24,8 @@ body {
 =======
 <<<<<<< Updated upstream
 =======
+=======
+>>>>>>> checkpoint-5-collection
 .navbar {
   padding: 0.5rem;
   background-color: rgba(101,18,95,0.5);
@@ -78,6 +81,7 @@ body {
 =======
 }
 
+<<<<<<< HEAD
 .navbar-link:active {
   color: rgb(233,50,117);
   background-color: white;
@@ -91,6 +95,11 @@ body {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+=======
+.links-container .navbar-link:active {
+  color: rgb(233,50,117);
+  background-color: white;
+>>>>>>> checkpoint-5-collection
 }
 
 =======
