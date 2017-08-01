@@ -30,6 +30,22 @@ var albumMarconi = {
     ]
 };
 
+//Mark's Album
+var albumDellaPosta = {
+    title: '401',
+    artist: 'Mark DellaPosta',
+    label: 'Ocean Records',
+    year: '1991',
+    albumArtUrl: 'assets/images/album_covers/13.png',
+    songs: [
+        { title: 'College Lacrosse', duration: '2:24'},
+        { title: 'Rhode Island Pride', duration: '4:01'},
+        { title: 'New York working', duration: '3:13'},
+        { title: 'Bostonian', duration: '6:17'},
+        { title: 'Boats and fishing', duration: '2:03'}
+    ]
+};
+
 var createSongRow = function(songNumber, songName, songLength) {
     var template =
         '<tr class="album-view-song-item">'
@@ -63,4 +79,14 @@ var setCurrentAlbum = function(album) {
 
 window.onload = function () {
     setCurrentAlbum(albumPicasso);
+
+    var music = [albumPicasso, albumMarconi, albumDellaPosta];
+    var index = 0;
+    albumImage.addEventListener('click', function(event) {
+        setCurrentAlbum(album[index]);
+        index++;
+        if (index === albums.length) {
+            index = 0;
+        }
+    });
 };
