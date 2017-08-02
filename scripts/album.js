@@ -47,6 +47,9 @@ var albumDellaPosta = {
 };
 
 var createSongRow = function(songNumber, songName, songLength) {
+  console.log(songNumber);
+  console.log(songName);
+  console.log(songLength);
     var template =
         '<tr class="album-view-song-item">'
       + '  <td class="song-item-number" data-song-number="' + songNumber + '">' + songNumber + '</td>'
@@ -74,7 +77,8 @@ var setCurrentAlbum = function(album) {
     albumSongList.innerHTML = '';
 
     for (var i = 0; i < album.songs.length; i++) {
-        albumSongList.innerHTML += createSongRow(i + 1, album.songs[i].name, album.songs[i].length);
+      console.log(album.songs);
+        albumSongList.innerHTML += createSongRow(i + 1, album.songs[i].title, album.songs[i].duration);
     }
 };
 
