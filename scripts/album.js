@@ -49,7 +49,7 @@ var albumDellaPosta = {
 var createSongRow = function(songNumber, songName, songLength) {
     var template =
         '<tr class="album-view-song-item">'
-      + '   <td class="song-item-number" data-song-number = "' + songNumber + '">' + songNumber + '</td>'
+      + '   <td class="song-item-number" data-song-number ="' + songNumber + '">' + songNumber + '</td>'
       + '   <td class="song-item-title">' + songName + '</td>'
       + '   <td class="song-item-duration">' + songLength + '</td>'
       ;
@@ -78,7 +78,7 @@ var setCurrentAlbum = function(album) {
 };
 
 var songListContainer = document.getElementsByClassName('album-view-song-list')[0];
-var songRows = document.getElementsByClassName('album-view-song-list');
+var songRows = document.getElementsByClassName('album-view-song-item');
 
 var playButtomTemplate = '<a class="album-song-button"><span class="ion-play"></span></a>';
 
