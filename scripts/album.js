@@ -96,8 +96,7 @@ window.onload = function () {
            this.children[0].innerHTML = this.children[0].getAttribute('data-song-number');
        });
     }
-
-  });
+};
 
     var albums = [albumPicasso, albumMarconi, albumDellaPosta];
     var index = 0;
