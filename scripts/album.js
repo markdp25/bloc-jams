@@ -30,10 +30,26 @@ var albumMarconi = {
     ]
 };
 
+//Mark's Album
+var albumDellaPosta = {
+    title: '401',
+    artist: 'Mark DellaPosta',
+    label: 'Ocean Records',
+    year: '1991',
+    albumArtUrl: 'assets/images/album_covers/13.png',
+    songs: [
+        { title: 'College Lacrosse', duration: '2:24'},
+        { title: 'Rhode Island Pride', duration: '4:01'},
+        { title: 'New York working', duration: '3:13'},
+        { title: 'Bostonian', duration: '6:17'},
+        { title: 'Boats and fishing', duration: '2:03'}
+    ]
+};
+
 var createSongRow = function(songNumber, songName, songLength) {
     var template =
         '<tr class="album-view-song-item">'
-      + '   <td class="song-item-number">' + songNumber + '</td>'
+      + '   <td class="song-item-number" data-song-number = "' + songNumber + '">' songNumber + '</td>'
       + '   <td class="song-item-title">' + songName + '</td>'
       + '   <td class="song-item-duration">' + songLength + '</td>'
       ;
@@ -57,10 +73,37 @@ var setCurrentAlbum = function(album) {
     albumSongList.innerHTML = '';
 
     for (var i = 0; i < album.songs.length; i++) {
-        albumSongList.innerHTML += createSongRow(i + 1, album.songs[i].title, album.songs[i].duration);
+        albumSongList.innerHTML += createSongRow(i + 1, album.songs[i].name, album.songs[i].length);
     }
 };
 
+var songListContainer = document.getElementsByClassName('album-view-song-list')[0];
+var songRows = document.getElementsByClassName('album-view-song-list');
+
+var playButtomTemplate = '<a class="album-song-button"><span class="ion-play"></span></a>';
+
 window.onload = function () {
     setCurrentAlbum(albumPicasso);
+
+    songListContainer.addEventListener('mouseover', function(event){
+        if (event.target.parentElement.className === 'album-view-song-item') {
+          event.target.parentElement.querySelector('.song-item-number').innerHTML = playButtomTemplate;
+        }
+    } );
+
+    for (var i = 0; i < songRows.length; i++) {
+        songRows[i].addEventListener('mouseleave', function(event){
+            this.children[0].innerHTML = this.children[0].getAttribute('data-song-number');
+        } );
+    }
+
+    var music = [albumPicasso, albumMarconi, albumDellaPosta];
+    var index = 0;
+    albumImage.addEventListener("click", function(event) {
+        setCurrentAlbum(album[index]);
+        index++;
+        if (index == albums.length) {
+            index = 0;
+        }
+    } );
 };
