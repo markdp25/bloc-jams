@@ -73,7 +73,7 @@ var setCurrentAlbum = function(album) {
     albumSongList.innerHTML = '';
 
     for (var i = 0; i < album.songs.length; i++) {
-        albumSongList.innerHTML += createSongRow(i + 1, album.songs[i].title, album.songs[i].duration);
+        albumSongList.innerHTML += createSongRow(i + 1, album.songs[i].name, album.songs[i].length);
     }
 };
 
@@ -85,8 +85,8 @@ window.onload = function () {
     albumImage.addEventListener('click', function(event) {
         setCurrentAlbum(album[index]);
         index++;
-        if (index === albums.length) {
+        if (index == albums.length) {
             index = 0;
         }
-    });
+    } );
 };
