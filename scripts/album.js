@@ -82,7 +82,7 @@ window.onload = function () {
 
     var music = [albumPicasso, albumMarconi, albumDellaPosta];
     var index = 0;
-    albumImage.addEventListener('click', function(event) {
+    albumImage.addEventListener("click", function(event) {
         setCurrentAlbum(album[index]);
         index++;
         if (index == albums.length) {
