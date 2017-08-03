@@ -83,13 +83,26 @@ var setCurrentAlbum = function(album) {
 };
 
 var findParentByClassName = function(element, targetClass) {
-    if (element) {
-        var currentParent = element.parentElement;
-        while (currentParent.className !== targetClass && currentParent.className !== null) {
-          currentParent = currentParent.parentElement;
-        }
-        return currentParent;
-    }
+  if (element) {
+    //check to see if parent element exists and if not log no parent found
+      if (element.parentElement === null) {
+          console.log("No parent found");
+      }
+          else {
+            //original code from checkpoint coursework
+              var currentParent = element.parentElement;
+              while (currentParent.className != targetClass && currentParent.className !== null) {
+                  currentParent = currentParent.parentElement;
+          }
+      //check to see if class name of parent exists and if not log no parent found with that class name
+      if (currentParent.className === null) {
+          console.log("No parent found with that class name");
+      }
+          else {
+              return currentParent;
+          }
+  }
+}
 };
 
 var getSongItem = function(element) {
