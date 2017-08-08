@@ -58,39 +58,51 @@ var createSongRow = function(songNumber, songName, songLength) {
       + ' </tr>'
       ;
 
-      return template;
+      return $(template);
 };
-
-var albumTitle = document.getElementsByClassName('album-view-title')[0];
-var albumArtist = document.getElementsByClassName('album-view-artist')[0];
-var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
-var albumImage = document.getElementsByClassName('album-cover-art')[0];
-var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
-
 var setCurrentAlbum = function(album) {
+    var $albumTitle = $('.album-view-title');
+    var $albumArtist = $('.album-view-artist');
+    var $albumReleaseInfo = $('.album-view-release-info');
+    var $albumImage = $('.album-cover-art');
+    var $albumSongList = $('.album-view-song-list');
 
-    albumTitle.firstChild.nodeValue = album.title;
-    albumArtist.firstChild.nodeValue = album.artist;
-    albumReleaseInfo.firstChild.nodeValue = album.year + ' ' + album.label;
-    albumImage.setAttribute('src', album.albumArtUrl);
 
-    albumSongList.innerHTML = '';
+    $albumTitle.text(album.title);
+    $albumArtist.text(album.artist);
+    $albumReleaseInfo.text(album.year + ' ' + album.label);
+    $albumImage.attr('src', album.albumArtUrl);
+
+    $albumSongList.empty();
 
     for (var i = 0; i < album.songs.length; i++) {
-      console.log(album.songs);
-        albumSongList.innerHTML += createSongRow(i + 1, album.songs[i].title, album.songs[i].duration);
+       var $newRow = createSongRow(i + 1, album.songs[i].title, album.songs[i].duration);
+       $albumSongList.append($newRow);
     }
 };
 
 var findParentByClassName = function(element, targetClass) {
-    if (element) {
-        var currentParent = element.parentElement;
-        while (currentParent.className !== targetClass && currentParent.className !== null) {
-          currentParent = currentParent.parentElement;
-        }
-        return currentParent;
-    }
-};
+  if (element) {
+    //check to see if parent element exists and if not log no parent found
+      if (element.parentElement === null) {
+          console.log("No parent found");
+      }
+          else {
+            //original code from checkpoint coursework
+              var currentParent = element.parentElement;
+              while (currentParent.className != targetClass && currentParent.className !== null) {
+                  currentParent = currentParent.parentElement;
+          }
+      //check to see if class name of parent exists and if not log no parent found with that class name
+      if (currentParent.className === null) {
+          console.log("No parent found with that class name");
+      }
+          else {
+              return currentParent;
+          }
+  }
+}
+}
 
 var getSongItem = function(element) {
   switch(element.className) {
