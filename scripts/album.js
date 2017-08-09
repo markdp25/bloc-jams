@@ -125,6 +125,7 @@ var currentlyPlayingSong = null;
 $(document).ready(function(){
     setCurrentAlbum(albumPicasso);
 });
+<<<<<<< HEAD
 
     var albums = [albumPicasso, albumMarconi, albumDellaPosta];
     var index = 0;
@@ -135,3 +136,5 @@ $(document).ready(function(){
           index = 0;
         }
     } );
+=======
+>>>>>>> checkpoint-17-album-collection
