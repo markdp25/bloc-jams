@@ -4,7 +4,11 @@ body.album {
      background-attachment: fixed;
      background-position: center center;
      background-size: cover;
+<<<<<<< HEAD
      padding-bottom: 200px;
+=======
+     padding-bottom: 200px;    /* Reserve space at the bottom of the page for the player controls (see player_bar.css) to ensure that they don't cover any content' */
+>>>>>>> checkpoint-19-assignment
  }
 
  .album-cover-art {
@@ -50,7 +54,11 @@ body.album {
 
  .song-item-number {
      width: 5%;
+<<<<<<< HEAD
      min-width: 30px;
+=======
+     min-width: 30px;  /* Make sure the Play button fits in the song number column to avoid the visual distraction of dynamically resizing during a hover event */
+>>>>>>> checkpoint-19-assignment
  }
 
  .song-item-title {
@@ -82,6 +90,10 @@ body.album {
     line-height: 28px;
 }
 
+<<<<<<< HEAD
+=======
+/* Centered text looks better on smaller devices */
+>>>>>>> checkpoint-19-assignment
  @media (max-width: 640px) and (min-width: 320px) {
      .album-view-details {
          text-align: center;
