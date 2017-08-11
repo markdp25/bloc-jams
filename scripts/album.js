@@ -23,11 +23,11 @@ var createSongRow = function(songNumber, songName, songLength) {
          if (currentlyPlayingSongNumber !== songNumber) {
 
              setSong(songNumber);
-<<<<<<< HEAD
-+            currentSoundFile.play();
-=======
+
+            currentSoundFile.play();
+
              currentSoundFile.play();
->>>>>>> checkpoint-19-assignment
+
              $(this).html(pauseButtonTemplate);
              currentSongFromAlbum = currentAlbum.songs[songNumber - 1];
              updatePlayerBarSong();
