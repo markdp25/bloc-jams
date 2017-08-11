@@ -26,6 +26,7 @@ var createSongRow = function(songNumber, songName, songLength) {
              currentSoundFile.play();
              updateSeekBarWhileSongPlays();
              currentSongFromAlbum = currentAlbum.songs[songNumber - 1];
+
              var $volumeFill = $('.volume .fill');
              var $volumeThumb = $('.volume .thumb');
              $volumeFill.width(currentVolume + '%');
@@ -33,11 +34,13 @@ var createSongRow = function(songNumber, songName, songLength) {
 
              $(this).html(pauseButtonTemplate);
              updatePlayerBarSong();
+
          } else if (currentlyPlayingSongNumber === songNumber) {
            if (currentSoundFile.isPaused()) {
                $(this).html(pauseButtonTemplate);
                $('.main-controls .play-pause').html(playerBarPauseButton);
                currentSoundFile.play();
+
             } else {
                 $(this).html(playButtonTemplate);
                 $('.main-controls .play-pause').html(playerBarPlayButton);
@@ -176,7 +179,7 @@ var seek = function(time) {
     if (currentSoundFile) {
         currentSoundFile.setTime(time);
     }
-}
+};
 
 var setVolume = function(volume) {
     if (currentSoundFile) {
@@ -272,14 +275,3 @@ $(document).ready(function(){
     $nextButton.click(nextSong);
     $playToggleBar.click(togglePlayFromPlayerBar);
 });
-
-var $albumImage = $('.album-cover-art');
-var albums = [albumPicasso, albumMarconi, albumDellaPosta];
-var index = 0;
-$albumImage.click(function(event) {
-      setCurrentAlbum(albums[index]);
-      index++;
-      if (index == albums.length) {
-          index = 0;
-        }
-  });
