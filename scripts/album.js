@@ -306,6 +306,14 @@ var currentlyPlayingSongNumber = null;
 var currentSongFromAlbum = null;
 var currentSoundFile = null;
 var currentVolume = 80;
+var volumeFill = $(".volume .fill");
+var volumeThumb = $(".volume .thumb");
+    volumeFill.width(currentVolume + '%');
+    volumeThumb.css({left: currentVolume + '%'});
+var fillStart = $(".seek-control .fill");
+    fillStart.width(0);
+var thumbStart = $(".seek-control .thumb");
+    thumbStart.css({left: 0});
 
 var $previousButton = $('.main-controls .previous');
 var $nextButton = $('.main-controls .next');
