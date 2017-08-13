@@ -232,6 +232,9 @@ var trackIndex = function(album, song) {
 }
 
 var nextSong = function() {
+    var getLastSongNumber = function(index) {
+        return index == 0 ? currentAlbum.songs.length : index;
+    };
 
     var currentSongIndex = trackIndex(currentAlbum, currentSongFromAlbum);
 
@@ -246,7 +249,7 @@ var nextSong = function() {
     updateSeekBarWhileSongPlays();
     updatePlayerBarSong();
 
-    var lastSongNumber = currentlyPlayingSongNumber;
+    var lastSongNumber = getLastSongNumber(currentSongIndex);
     var $nextSongNumberCell = getSongNumberCell(currentlyPlayingSongNumber);
     var $lastSongNumberCell = getSongNumberCell(lastSongNumber);
 
@@ -256,6 +259,9 @@ var nextSong = function() {
 };
 
 var previousSong = function() {
+    var getLastSongNumber = function(index) {
+        return index == 0 ? currentAlbum.songs.length : index;
+    };
 
     var currentSongIndex = trackIndex(currentAlbum, currentSongFromAlbum);
     currentSongIndex--;
@@ -269,7 +275,7 @@ var previousSong = function() {
     updateSeekBarWhileSongPlays();
     updatePlayerBarSong();
 
-    var lastSongNumber = currentlyPlayingSongNumber;
+    var lastSongNumber = getLastSongNumber(currentSongIndex);
     var $previousSongNumberCell = getSongNumberCell(currentlyPlayingSongNumber);
     var $lastSongNumberCell = getSongNumberCell(lastSongNumber);
 
